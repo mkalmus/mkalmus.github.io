@@ -21,16 +21,17 @@ nav {
   overflow: hidden;
   position: fixed;
   top: 0;
-  height: 80px;
   border-bottom: rgb(177, 113, 220) 3px solid;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 nav ul {
-  padding: 0 30px;
+  padding: 0 20px;
   margin: 0;
   list-style: none;
   width: 100%;
@@ -41,7 +42,7 @@ nav li {
 }
 
 nav a {
-  padding: 20px;
+  padding: 15px;
   display: block;
   color: #fff;
   text-transform: uppercase;
@@ -49,21 +50,33 @@ nav a {
   text-decoration: none;
 }
 
-/* .right-align {
+nav a:active, nav a:hover{
+  color: rgb(177, 113, 220);
+}
+
+.left-align {
+  float: left;
+}
+
+.right-align {
   float: right;
-} */
+}
 
 section {
-  min-height: 90vh;
+  min-height: 100vh;
   display: inline-block;
   width: 100%;
 }
 
 h1 {
-  margin-top: 150px;
+  margin-top: 175px;
   text-align: center;
   padding: 0;
   font-size: 48px;
+}
+
+#landing-page h2 {
+  text-align: center;
 }
 
 .projects-container, .container{
@@ -103,7 +116,7 @@ margin-bottom: 2%;
 .bottom-container{
   display: inline-flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   padding: 1em 0;
   padding-bottom: 0;
 }
@@ -113,6 +126,10 @@ margin-bottom: 2%;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+}
+
+.bottom-container a:nth-child(2){
+  padding-left: 10px;
 }
 
 .bottom-container img {
@@ -152,6 +169,10 @@ margin-bottom: 2%;
   padding-top: 2em;
 }
 
+section#contact-page {
+  min-height: 95vh;
+}
+
 #contact-page .content {
   display: flex;
   justify-content: center;
@@ -160,7 +181,7 @@ margin-bottom: 2%;
 }
 
 #contact-page h1{
-  margin-top: 90px;
+  margin-top: 130px;
   padding-bottom: 1em;
 }
 
@@ -170,10 +191,42 @@ margin-bottom: 2%;
 }
 
 footer{
-  height: 40px;
   background-color: #2b2b2b;
   border-top: rgb(165, 72, 228) 3px solid;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+footer p{
+  padding: 5px 0;
+}
+
+#hamburger {
+  position: absolute;
+  right: 20px;
+}
+
+@media (max-width: 750px) {
+  nav li {
+    display: block;
+  }
+  nav a {
+    padding: 10px 0px;
+  }
+  .left-align {
+    display: none;
+  }
+  .right-align {
+    float: none;
+  }
+  #hamburger {
+    float: right;
+  }
+}
+
+@media (min-width: 750px) {
+  #hamburger {
+    display: none;
+  }
 }
